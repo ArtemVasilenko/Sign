@@ -12,6 +12,10 @@
 		ACD6EFC321F8697100515E71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD6EFC121F8697100515E71 /* Main.storyboard */; };
 		ACD6EFC521F8697500515E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD6EFC421F8697500515E71 /* Assets.xcassets */; };
 		ACD6EFC821F8697500515E71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD6EFC621F8697500515E71 /* LaunchScreen.storyboard */; };
+		ACD6EFD021F86AD400515E71 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6EFCF21F86AD400515E71 /* SignViewController.swift */; };
+		ACD6EFD221F98F8000515E71 /* loginDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6EFD121F98F8000515E71 /* loginDetail.swift */; };
+		ACD6EFDB21F9DA1000515E71 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6EFDA21F9DA1000515E71 /* RegistrationViewController.swift */; };
+		ACD6EFDD21F9DE5800515E71 /* HERAKLES.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACD6EFDC21F9DE5800515E71 /* HERAKLES.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		ACD6EFC421F8697500515E71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD6EFC721F8697500515E71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACD6EFC921F8697500515E71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD6EFCF21F86AD400515E71 /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
+		ACD6EFD121F98F8000515E71 /* loginDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginDetail.swift; sourceTree = "<group>"; };
+		ACD6EFDA21F9DA1000515E71 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		ACD6EFDC21F9DE5800515E71 /* HERAKLES.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HERAKLES.ttf; path = ../../../../../../Library/Fonts/HERAKLES.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +65,11 @@
 				ACD6EFBD21F8697100515E71 /* AppDelegate.swift */,
 				ACD6EFBF21F8697100515E71 /* ViewController.swift */,
 				ACD6EFC121F8697100515E71 /* Main.storyboard */,
+				ACD6EFD121F98F8000515E71 /* loginDetail.swift */,
+				ACD6EFCF21F86AD400515E71 /* SignViewController.swift */,
+				ACD6EFDA21F9DA1000515E71 /* RegistrationViewController.swift */,
 				ACD6EFC421F8697500515E71 /* Assets.xcassets */,
+				ACD6EFDC21F9DE5800515E71 /* HERAKLES.ttf */,
 				ACD6EFC621F8697500515E71 /* LaunchScreen.storyboard */,
 				ACD6EFC921F8697500515E71 /* Info.plist */,
 			);
@@ -125,6 +137,7 @@
 				ACD6EFC821F8697500515E71 /* LaunchScreen.storyboard in Resources */,
 				ACD6EFC521F8697500515E71 /* Assets.xcassets in Resources */,
 				ACD6EFC321F8697100515E71 /* Main.storyboard in Resources */,
+				ACD6EFDD21F9DE5800515E71 /* HERAKLES.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD6EFD221F98F8000515E71 /* loginDetail.swift in Sources */,
 				ACD6EFC021F8697100515E71 /* ViewController.swift in Sources */,
+				ACD6EFD021F86AD400515E71 /* SignViewController.swift in Sources */,
 				ACD6EFBE21F8697100515E71 /* AppDelegate.swift in Sources */,
+				ACD6EFDB21F9DA1000515E71 /* RegistrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SP8ZAT56L5;
 				INFOPLIST_FILE = Sign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SP8ZAT56L5;
 				INFOPLIST_FILE = Sign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

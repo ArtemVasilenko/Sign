@@ -5,6 +5,8 @@ class SignViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    var users = LoginAndPasswords()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,7 @@ class SignViewController: UIViewController {
     }
     
     @IBAction func enterButton(_ sender: UIButton) {
+        users.validate(emailTextField.text!, passwordTextField.text!)
     }
     
     
@@ -37,29 +40,25 @@ extension String {
 extension SignViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool  {
-        // return NO to disallow editing.
-        print("textFieldShouldBeginEditing = это я решаю, можно ли редактировать")
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool  {
         
-       
-        if (emailTextField.text?.matches("[a-z]"))! {
-            print("test")
-            return true
-        }
-        return false
+//       if (emailTextField.text?.matches("[a-z]"))! {
+//            print("test")
+//            return true
+//        }
+//
+//        emailTextField.text = "error"
+        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField)  {
-        //копия предыдущей функции
-        // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
@@ -69,8 +68,13 @@ extension SignViewController: UITextFieldDelegate {
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        //        print("textField, вы ввели \(string)")
-        //        // return NO to not change text
+        
+//        for login in users.users {
+//            if login.key == emailTextField.text {
+//                print("oh la-la")
+//                    return true
+//            }
+//        }
         return true
     }
     
@@ -94,8 +98,6 @@ extension SignViewController: UITextFieldDelegate {
         
         return false
     }
-    
-    
 }
 
 

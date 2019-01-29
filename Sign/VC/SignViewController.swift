@@ -5,36 +5,46 @@ class SignViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    var users = LoginAndPasswords()
+    @IBOutlet weak var btnEnter: UIButton!
+    @IBOutlet weak var btnRegistr: UIButton!
     
+    var userRegistr = LoginAndPasswords()
+    var alert = Alert()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        
+    fileprivate func createNotification() {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil, using: {nc in self.view.frame.origin.y = -200})
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil, using: {nc in self.view.frame.origin.y = 0})
     }
     
-    @IBAction func enterButton(_ sender: UIButton) {
-        users.validate(emailTextField.text!, passwordTextField.text!)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        btnEnter.layer.cornerRadius = 5.0
+        btnRegistr.layer.cornerRadius = 5.0
+        createNotification()
     }
     
+    
+    @IBAction func enterButton(_ sender: UIButton) {
+        if userRegistr.validate(emailTextField.text!, passwordTextField.text!) {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let helloVC = storyboard.instantiateViewController(withIdentifier: "helloVC") as! HelloViewController
+            self.present(helloVC, animated: true, completion: nil)
+        } else {
+            alert.alarm()
+            self.present(alert.allertController, animated: true, completion: nil)
+            print("oh no")
+        }
+    }
     
     @IBAction func registrationButton(_ sender: UIButton) {
     }
-    
 }
 
 
 
-extension String {
-    func matches(_ regex: String) -> Bool {
-        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
-    }
-}
 
 
 extension SignViewController: UITextFieldDelegate {
@@ -48,12 +58,6 @@ extension SignViewController: UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool  {
         
-//       if (emailTextField.text?.matches("[a-z]"))! {
-//            print("test")
-//            return true
-//        }
-//
-//        emailTextField.text = "error"
         return true
     }
     
@@ -62,26 +66,17 @@ extension SignViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        //копия предыдущей функции
-        // if implemented, called in place of textFieldDidEndEditing:
     }
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-//        for login in users.users {
-//            if login.key == emailTextField.text {
-//                print("oh la-la")
-//                    return true
-//            }
-//        }
         return true
     }
     
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        //print("textField что-то очистили")
-        // called when clear button pressed. return NO to ignore (no notifications)
+        
         return true  //разрешает удалять текст
     }
     

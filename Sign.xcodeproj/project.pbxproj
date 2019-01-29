@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC41247321FF30E000A89BAF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC41247221FF30E000A89BAF /* Alert.swift */; };
+		AC41247521FF41BC00A89BAF /* HelloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC41247421FF41BC00A89BAF /* HelloViewController.swift */; };
 		ACD6EFBE21F8697100515E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6EFBD21F8697100515E71 /* AppDelegate.swift */; };
-		ACD6EFC021F8697100515E71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6EFBF21F8697100515E71 /* ViewController.swift */; };
 		ACD6EFC321F8697100515E71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD6EFC121F8697100515E71 /* Main.storyboard */; };
 		ACD6EFC521F8697500515E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD6EFC421F8697500515E71 /* Assets.xcassets */; };
 		ACD6EFC821F8697500515E71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD6EFC621F8697500515E71 /* LaunchScreen.storyboard */; };
@@ -19,9 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC41247221FF30E000A89BAF /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		AC41247421FF41BC00A89BAF /* HelloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloViewController.swift; sourceTree = "<group>"; };
 		ACD6EFBA21F8697100515E71 /* Sign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD6EFBD21F8697100515E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACD6EFBF21F8697100515E71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ACD6EFC221F8697100515E71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACD6EFC421F8697500515E71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD6EFC721F8697500515E71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC4124942200724100A89BAF /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				AC41247421FF41BC00A89BAF /* HelloViewController.swift */,
+				ACD6EFDA21F9DA1000515E71 /* RegistrationViewController.swift */,
+				ACD6EFCF21F86AD400515E71 /* SignViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		ACD6EFB121F8697000515E71 = {
 			isa = PBXGroup;
 			children = (
@@ -63,11 +75,10 @@
 			isa = PBXGroup;
 			children = (
 				ACD6EFBD21F8697100515E71 /* AppDelegate.swift */,
-				ACD6EFBF21F8697100515E71 /* ViewController.swift */,
-				ACD6EFC121F8697100515E71 /* Main.storyboard */,
-				ACD6EFCF21F86AD400515E71 /* SignViewController.swift */,
-				ACD6EFDA21F9DA1000515E71 /* RegistrationViewController.swift */,
+				AC41247221FF30E000A89BAF /* Alert.swift */,
 				ACD6EFD121F98F8000515E71 /* loginDetail.swift */,
+				ACD6EFC121F8697100515E71 /* Main.storyboard */,
+				AC4124942200724100A89BAF /* VC */,
 				ACD6EFC421F8697500515E71 /* Assets.xcassets */,
 				ACD6EFDC21F9DE5800515E71 /* HERAKLES.ttf */,
 				ACD6EFC621F8697500515E71 /* LaunchScreen.storyboard */,
@@ -148,8 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC41247321FF30E000A89BAF /* Alert.swift in Sources */,
 				ACD6EFD221F98F8000515E71 /* loginDetail.swift in Sources */,
-				ACD6EFC021F8697100515E71 /* ViewController.swift in Sources */,
+				AC41247521FF41BC00A89BAF /* HelloViewController.swift in Sources */,
 				ACD6EFD021F86AD400515E71 /* SignViewController.swift in Sources */,
 				ACD6EFBE21F8697100515E71 /* AppDelegate.swift in Sources */,
 				ACD6EFDB21F9DA1000515E71 /* RegistrationViewController.swift in Sources */,

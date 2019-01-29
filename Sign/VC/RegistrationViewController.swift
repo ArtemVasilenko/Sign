@@ -1,45 +1,48 @@
 import UIKit
 
 class RegistrationViewController: UIViewController {
-    
     var userRegistr = LoginAndPasswords()
     func addUsers (_ email: String, _ passw: String) {
         userRegistr.users[email] = passw
     }
     
+    
+    @IBOutlet weak var registrButtonOutlet: UIButton!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
+    func madeNotifications() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil, using: {nc in self.view.frame.origin.y = -75})
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil, using: {nc in self.view.frame.origin.y = 0})
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.txtEmail.resignFirstResponder()
+        self.txtName.resignFirstResponder()
+        self.txtPassword.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
+
         txtName.delegate = self
         txtEmail.delegate = self
         txtPassword.delegate = self
-        
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil, using: {nc in self.view.frame.origin.y = -75})
-        
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil, using: {nc in self.view.frame.origin.y = 0})
+        madeNotifications()
+        registrButtonOutlet.layer.cornerRadius = 5.0
         
     }
     
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    @IBAction func btnRegistration(_ sender: Any) {
+@IBAction func registrButton(_ sender: UIButton) {
         addUsers(txtEmail.text!, txtPassword.text!)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let helloVC = storyBoard.instantiateViewController(withIdentifier: "helloVC") as! HelloViewController
+        self.present(helloVC, animated: true, completion: nil)
+        helloVC.userRegistr = self.userRegistr
         print(userRegistr.users)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let login = segue.destination as! SignViewController
-        login.users.users = userRegistr.users
-    }
     
 }
 

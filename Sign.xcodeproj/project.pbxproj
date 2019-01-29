@@ -48,11 +48,18 @@
 		AC4124942200724100A89BAF /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				AC41247421FF41BC00A89BAF /* HelloViewController.swift */,
-				ACD6EFDA21F9DA1000515E71 /* RegistrationViewController.swift */,
 				ACD6EFCF21F86AD400515E71 /* SignViewController.swift */,
+				ACD6EFDA21F9DA1000515E71 /* RegistrationViewController.swift */,
+				AC41247421FF41BC00A89BAF /* HelloViewController.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		AC4124972200859500A89BAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		ACD6EFB121F8697000515E71 = {
@@ -77,8 +84,9 @@
 				ACD6EFBD21F8697100515E71 /* AppDelegate.swift */,
 				AC41247221FF30E000A89BAF /* Alert.swift */,
 				ACD6EFD121F98F8000515E71 /* loginDetail.swift */,
-				ACD6EFC121F8697100515E71 /* Main.storyboard */,
+				AC4124972200859500A89BAF /* Model */,
 				AC4124942200724100A89BAF /* VC */,
+				ACD6EFC121F8697100515E71 /* Main.storyboard */,
 				ACD6EFC421F8697500515E71 /* Assets.xcassets */,
 				ACD6EFDC21F9DE5800515E71 /* HERAKLES.ttf */,
 				ACD6EFC621F8697500515E71 /* LaunchScreen.storyboard */,

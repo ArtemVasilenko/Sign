@@ -6,7 +6,6 @@ class RegistrationViewController: UIViewController {
         userRegistr.users[email] = passw
     }
     
-    
     @IBOutlet weak var registrButtonOutlet: UIButton!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -23,9 +22,23 @@ class RegistrationViewController: UIViewController {
         self.txtPassword.resignFirstResponder()
     }
     
+    fileprivate func tupRegistrButton() {
+        if userRegistr.checkEmail(email: txtEmail.text!) {
+            if userRegistr.checkPassword(password: txtPassword.text!) {
+                addUsers(txtEmail.text!, txtPassword.text!)
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let helloVC = storyBoard.instantiateViewController(withIdentifier: "helloVC") as! HelloViewController
+                self.present(helloVC, animated: true, completion: nil)
+                helloVC.userRegistr = self.userRegistr
+                print(userRegistr.users)
+                print("email correct")
+                print("password correct")
+            } else { print("password incorrect") }
+        } else { print("email incorrect") }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         txtName.delegate = self
         txtEmail.delegate = self
         txtPassword.delegate = self
@@ -34,19 +47,13 @@ class RegistrationViewController: UIViewController {
         
     }
     
-@IBAction func registrButton(_ sender: UIButton) {
-        addUsers(txtEmail.text!, txtPassword.text!)
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let helloVC = storyBoard.instantiateViewController(withIdentifier: "helloVC") as! HelloViewController
-        self.present(helloVC, animated: true, completion: nil)
-        helloVC.userRegistr = self.userRegistr
-        print(userRegistr.users)
+    @IBAction func registrButton(_ sender: UIButton) {
+        tupRegistrButton()
     }
-    
-    
 }
 
 extension RegistrationViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == txtName {
             self.txtName.resignFirstResponder()

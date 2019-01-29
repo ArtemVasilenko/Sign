@@ -10,11 +10,15 @@ class SignViewController: UIViewController {
     
     var userRegistr = LoginAndPasswords()
     var alert = Alert()
-    
-    fileprivate func createNotification() {
+    func createNotification() {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil, using: {nc in self.view.frame.origin.y = -200})
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil, using: {nc in self.view.frame.origin.y = 0})
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
     }
     
     override func viewDidLoad() {
@@ -34,7 +38,7 @@ class SignViewController: UIViewController {
             self.present(helloVC, animated: true, completion: nil)
         } else {
             alert.alarm()
-            self.present(alert.allertController, animated: true, completion: nil)
+//            self.present(alert.allertController, animated: true, completion: nil)
             print("oh no")
         }
     }
@@ -42,8 +46,6 @@ class SignViewController: UIViewController {
     @IBAction func registrationButton(_ sender: UIButton) {
     }
 }
-
-
 
 
 
@@ -70,13 +72,11 @@ extension SignViewController: UITextFieldDelegate {
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
         return true
     }
     
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        
         return true  //разрешает удалять текст
     }
     
@@ -90,7 +90,6 @@ extension SignViewController: UITextFieldDelegate {
             self.passwordTextField.resignFirstResponder()
             return true
         }
-        
         return false
     }
 }

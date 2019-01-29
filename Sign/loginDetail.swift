@@ -1,12 +1,6 @@
-//
-//  loginDetail.swift
-//  Sign
-//
-//  Created by Артем on 1/24/19.
-//  Copyright © 2019 Артем. All rights reserved.
-//
 
 import Foundation
+import UIKit
 
 struct LoginAndPasswords {
     var users = ["admin": "admin"]
@@ -24,13 +18,19 @@ struct LoginAndPasswords {
     }
     
     func checkEmail(email: String) -> Bool {
-        if email.matches("[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}") {
+    if email.matches("[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}") {
+        return true
+    }
+    return false
+}
+    
+    func checkPassword(password: String) -> Bool {
+        if password.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$") {
             return true
         }
         return false
     }
 }
-
 
 extension String {
     func matches(_ regex: String) -> Bool {

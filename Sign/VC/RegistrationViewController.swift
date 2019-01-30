@@ -10,6 +10,8 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var labelEmailIncorrect: UILabel!
+    @IBOutlet weak var labelPasswordIncorrect: UILabel!
     
     func madeNotifications() {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil, using: {nc in self.view.frame.origin.y = -75})
@@ -24,7 +26,9 @@ class RegistrationViewController: UIViewController {
     
     fileprivate func tupRegistrButton() {
         if (txtEmail.text?.matchesEmail())! {
+            self.labelEmailIncorrect.isHidden = true
             if (txtPassword.text?.matchesPassword())! {
+                self.labelPasswordIncorrect.isHidden = true
                 addUsers(txtEmail.text!, txtPassword.text!)
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let helloVC = storyBoard.instantiateViewController(withIdentifier: "helloVC") as! HelloViewController
@@ -34,13 +38,18 @@ class RegistrationViewController: UIViewController {
                 print("email correct")
                 print("password correct")
             } else { print("password incorrect") }
-        } else { print("email incorrect") }
+            self.labelPasswordIncorrect.isHidden = false
+            self.labelPasswordIncorrect.text = "Password incorrect"
+        } else { print("email incorrect")
+            self.labelEmailIncorrect.isHidden = false
+            self.labelEmailIncorrect.text = "Email incorrect"
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-txtName.delegate = self
+        txtName.delegate = self
         txtEmail.delegate = self
         txtPassword.delegate = self
         madeNotifications()

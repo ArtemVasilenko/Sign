@@ -242,17 +242,32 @@
                                     <action selector="registrButton:" destination="FQy-FB-Tiv" eventType="touchUpInside" id="bH7-JC-DUe"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0j-bV-IOt">
+                                <rect key="frame" x="16" y="286" width="36" height="20"/>
+                                <fontDescription key="fontDescription" name="Herakles" family="PiRhoHerak" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-Cb-L0Q">
+                                <rect key="frame" x="13" y="364" width="34" height="19"/>
+                                <fontDescription key="fontDescription" name="Herakles" family="PiRhoHerak" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="eC7-Cb-L0Q" firstAttribute="leading" secondItem="Ogv-WK-y6J" secondAttribute="leading" constant="13" id="29C-9E-gtS"/>
                             <constraint firstItem="Ogv-WK-y6J" firstAttribute="trailing" secondItem="wpT-Ox-mSz" secondAttribute="trailing" constant="16" id="3Lh-jL-uEW"/>
                             <constraint firstItem="wpT-Ox-mSz" firstAttribute="leading" secondItem="Ogv-WK-y6J" secondAttribute="leading" constant="16" id="7Ls-9g-hXr"/>
                             <constraint firstItem="wza-1n-by8" firstAttribute="leading" secondItem="Ogv-WK-y6J" secondAttribute="leading" constant="16" id="8FZ-EG-FsF"/>
+                            <constraint firstItem="eC7-Cb-L0Q" firstAttribute="top" secondItem="bGD-90-doq" secondAttribute="bottom" constant="7.5" id="ACx-6Y-hsU"/>
                             <constraint firstItem="XsQ-An-m7m" firstAttribute="leading" secondItem="Ogv-WK-y6J" secondAttribute="leading" id="Bzd-I2-aSU"/>
                             <constraint firstItem="T4c-XW-pw3" firstAttribute="top" secondItem="Ogv-WK-y6J" secondAttribute="top" constant="84" id="F5y-SW-Sz1"/>
                             <constraint firstItem="wza-1n-by8" firstAttribute="top" secondItem="T4c-XW-pw3" secondAttribute="bottom" constant="7.5" id="HcM-5O-CcQ"/>
                             <constraint firstItem="Ogv-WK-y6J" firstAttribute="trailing" secondItem="1Zu-ex-shn" secondAttribute="trailing" constant="114" id="Hg5-B5-00j"/>
                             <constraint firstItem="bGD-90-doq" firstAttribute="leading" secondItem="Ogv-WK-y6J" secondAttribute="leading" constant="16" id="HzE-oN-1Ev"/>
+                            <constraint firstItem="G0j-bV-IOt" firstAttribute="top" secondItem="wpT-Ox-mSz" secondAttribute="bottom" constant="1.5" id="HzW-BS-nZ9"/>
                             <constraint firstItem="XsQ-An-m7m" firstAttribute="trailing" secondItem="Ogv-WK-y6J" secondAttribute="trailing" id="IvK-Sg-aVj"/>
                             <constraint firstItem="Ogv-WK-y6J" firstAttribute="trailing" secondItem="nL7-Yn-83Z" secondAttribute="trailing" constant="160" id="L4f-O8-vf4"/>
                             <constraint firstItem="1Zu-ex-shn" firstAttribute="top" secondItem="bGD-90-doq" secondAttribute="bottom" constant="58" id="Mzb-le-bjQ"/>
@@ -265,6 +280,7 @@
                             <constraint firstItem="bGD-90-doq" firstAttribute="top" secondItem="2H5-Sb-qg8" secondAttribute="bottom" constant="7" id="Yd4-HN-mda"/>
                             <constraint firstItem="2H5-Sb-qg8" firstAttribute="top" secondItem="wpT-Ox-mSz" secondAttribute="bottom" constant="8" id="ayo-7n-hjV"/>
                             <constraint firstItem="2H5-Sb-qg8" firstAttribute="leading" secondItem="Ogv-WK-y6J" secondAttribute="leading" constant="145" id="cLY-IP-Qbt"/>
+                            <constraint firstItem="G0j-bV-IOt" firstAttribute="leading" secondItem="Ogv-WK-y6J" secondAttribute="leading" constant="16" id="ddJ-Ea-PQp"/>
                             <constraint firstItem="XsQ-An-m7m" firstAttribute="bottom" secondItem="Ogv-WK-y6J" secondAttribute="bottom" id="eAl-78-eTB"/>
                             <constraint firstItem="nL7-Yn-83Z" firstAttribute="leading" secondItem="Ogv-WK-y6J" secondAttribute="leading" constant="159" id="r7A-LM-utc"/>
                             <constraint firstItem="Ogv-WK-y6J" firstAttribute="trailing" secondItem="2H5-Sb-qg8" secondAttribute="trailing" constant="146" id="spw-3w-25u"/>
@@ -274,6 +290,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign up" id="0iP-YC-fhj"/>
                     <connections>
+                        <outlet property="labelEmailIncorrect" destination="G0j-bV-IOt" id="naV-Mc-wDM"/>
+                        <outlet property="labelPasswordIncorrect" destination="eC7-Cb-L0Q" id="4wr-jF-KaT"/>
                         <outlet property="registrButtonOutlet" destination="1Zu-ex-shn" id="8mV-a5-3we"/>
                         <outlet property="txtEmail" destination="wpT-Ox-mSz" id="iSc-YJ-zeS"/>
                         <outlet property="txtName" destination="wza-1n-by8" id="AUf-K5-L10"/>

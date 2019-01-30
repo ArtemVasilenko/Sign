@@ -25,9 +25,7 @@ class RegistrationViewController: UIViewController {
     fileprivate func tupRegistrButton() {
         if (txtEmail.text?.matchesEmail())! {
             if (txtPassword.text?.matchesPassword())! {
-//        if userRegistr.checkEmail(email: txtEmail.text!) {
-//            if userRegistr.checkPassword(password: txtPassword.text!) {
-//                addUsers(txtEmail.text!, txtPassword.text!)
+                addUsers(txtEmail.text!, txtPassword.text!)
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let helloVC = storyBoard.instantiateViewController(withIdentifier: "helloVC") as! HelloViewController
                 self.present(helloVC, animated: true, completion: nil)

@@ -10,6 +10,7 @@
 		AC41247321FF30E000A89BAF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC41247221FF30E000A89BAF /* Alert.swift */; };
 		AC41247521FF41BC00A89BAF /* HelloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC41247421FF41BC00A89BAF /* HelloViewController.swift */; };
 		AC41249B2200BCEF00A89BAF /* TouchBegan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC41249A2200BCEF00A89BAF /* TouchBegan.swift */; };
+		ACA0FBEC2201CDB100F3B0ED /* RemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0FBEB2201CDB100F3B0ED /* RemindViewController.swift */; };
 		ACD6EFBE21F8697100515E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6EFBD21F8697100515E71 /* AppDelegate.swift */; };
 		ACD6EFC321F8697100515E71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD6EFC121F8697100515E71 /* Main.storyboard */; };
 		ACD6EFC521F8697500515E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD6EFC421F8697500515E71 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		AC41247221FF30E000A89BAF /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AC41247421FF41BC00A89BAF /* HelloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloViewController.swift; sourceTree = "<group>"; };
 		AC41249A2200BCEF00A89BAF /* TouchBegan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBegan.swift; sourceTree = "<group>"; };
+		ACA0FBEB2201CDB100F3B0ED /* RemindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindViewController.swift; sourceTree = "<group>"; };
 		ACD6EFBA21F8697100515E71 /* Sign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD6EFBD21F8697100515E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACD6EFC221F8697100515E71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,9 +53,9 @@
 			isa = PBXGroup;
 			children = (
 				ACD6EFCF21F86AD400515E71 /* SignViewController.swift */,
-				AC41249A2200BCEF00A89BAF /* TouchBegan.swift */,
-				ACD6EFDA21F9DA1000515E71 /* RegistrationViewController.swift */,
 				AC41247421FF41BC00A89BAF /* HelloViewController.swift */,
+				ACA0FBEB2201CDB100F3B0ED /* RemindViewController.swift */,
+				ACD6EFDA21F9DA1000515E71 /* RegistrationViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -61,6 +63,9 @@
 		AC4124972200859500A89BAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AC41247221FF30E000A89BAF /* Alert.swift */,
+				AC41249A2200BCEF00A89BAF /* TouchBegan.swift */,
+				ACD6EFD121F98F8000515E71 /* loginDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -85,8 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				ACD6EFBD21F8697100515E71 /* AppDelegate.swift */,
-				AC41247221FF30E000A89BAF /* Alert.swift */,
-				ACD6EFD121F98F8000515E71 /* loginDetail.swift */,
 				AC4124972200859500A89BAF /* Model */,
 				AC4124942200724100A89BAF /* VC */,
 				ACD6EFC121F8697100515E71 /* Main.storyboard */,
@@ -175,6 +178,7 @@
 				ACD6EFD221F98F8000515E71 /* loginDetail.swift in Sources */,
 				AC41247521FF41BC00A89BAF /* HelloViewController.swift in Sources */,
 				ACD6EFD021F86AD400515E71 /* SignViewController.swift in Sources */,
+				ACA0FBEC2201CDB100F3B0ED /* RemindViewController.swift in Sources */,
 				ACD6EFBE21F8697100515E71 /* AppDelegate.swift in Sources */,
 				ACD6EFDB21F9DA1000515E71 /* RegistrationViewController.swift in Sources */,
 			);

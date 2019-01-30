@@ -38,12 +38,29 @@ class SignViewController: UIViewController {
             self.present(helloVC, animated: true, completion: nil)
         } else {
             alert.alarm()
-//            self.present(alert.allertController, animated: true, completion: nil)
+            //            self.present(alert.allertController, animated: true, completion: nil)
             print("oh no")
         }
     }
     
     @IBAction func registrationButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func remindButton(_ sender: UIButton) {
+        //        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let remindVC = storyBoard.instantiateViewController(withIdentifier: "remindVC") as! RemindViewController
+        //        let navVC = UINavigationController(
+        //        self.present(remindVC, animated: true, completion: nil)
+        //        remindVC.userRegistr = self.userRegistr
+    }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "remindVCSegue" {
+            let remindVC = segue.destination as! RemindViewController
+            remindVC.userRegistr = self.userRegistr
+        }
     }
 }
 

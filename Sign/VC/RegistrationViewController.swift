@@ -23,9 +23,11 @@ class RegistrationViewController: UIViewController {
     }
     
     fileprivate func tupRegistrButton() {
-        if userRegistr.checkEmail(email: txtEmail.text!) {
-            if userRegistr.checkPassword(password: txtPassword.text!) {
-                addUsers(txtEmail.text!, txtPassword.text!)
+        if (txtEmail.text?.matchesEmail())! {
+            if (txtPassword.text?.matchesPassword())! {
+//        if userRegistr.checkEmail(email: txtEmail.text!) {
+//            if userRegistr.checkPassword(password: txtPassword.text!) {
+//                addUsers(txtEmail.text!, txtPassword.text!)
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let helloVC = storyBoard.instantiateViewController(withIdentifier: "helloVC") as! HelloViewController
                 self.present(helloVC, animated: true, completion: nil)
@@ -39,7 +41,8 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtName.delegate = self
+        
+txtName.delegate = self
         txtEmail.delegate = self
         txtPassword.delegate = self
         madeNotifications()

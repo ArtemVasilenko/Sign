@@ -17,23 +17,16 @@ struct LoginAndPasswords {
         return false
     }
     
-    func checkEmail(email: String) -> Bool {
-    if email.matches("[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}") {
-        return true
-    }
-    return false
 }
     
-    func checkPassword(password: String) -> Bool {
-        if password.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$") {
-            return true
-        }
-        return false
-    }
-}
+
 
 extension String {
-    func matches(_ regex: String) -> Bool {
-        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    func matchesEmail() -> Bool {
+        return self.range(of: "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}", options: .regularExpression, range: nil, locale: nil) != nil
+    }
+    
+    func matchesPassword() -> Bool {
+        return self.range(of: "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", options: .regularExpression, range: nil, locale: nil) != nil
     }
 }
